@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UCLA Language Processing Lab | processing.linguistics.ucla.edu</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Tailwind Configuration for UCLA Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bruinBlue: '#2774AE',
+                        bruinGold: '#FFD100',
+                        uclaDarkerBlue: '#005587',
+                        uclaDarkestBlue: '#003B5C',
+                        uclaLightBlue: '#8BB8E8'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Custom pattern background for hero */
+        .hero-pattern {
+            background-color: #2774AE;
+            background-image: radial-gradient(#005587 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 antialiased flex flex-col min-h-screen">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <!-- Logo & Site Name -->
+                <div class="flex items-center">
+                    <a href="#" class="flex-shrink-0 flex items-center gap-3 hover:opacity-80 transition-opacity">
+                        <div class="w-10 h-10 bg-bruinBlue rounded flex items-center justify-center text-white font-bold text-xl">
+                            UCLA
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-bold text-uclaDarkerBlue text-lg leading-tight">Language Processing Lab</span>
+                            <span class="text-sm text-gray-500 leading-tight">Department of Linguistics</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-bruinBlue font-medium transition-colors">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-bruinBlue font-medium transition-colors">About</a>
+                    <a href="#people" class="text-gray-700 hover:text-bruinBlue font-medium transition-colors">People</a>
+                    <a href="#research" class="text-gray-700 hover:text-bruinBlue font-medium transition-colors">Research</a>
+                    <a href="#publications" class="text-gray-700 hover:text-bruinBlue font-medium transition-colors">Publications</a>
+                    <a href="#participate" class="bg-bruinGold text-uclaDarkestBlue px-5 py-2 rounded-md font-semibold hover:bg-yellow-400 transition-colors shadow-sm">
+                        Participate
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="flex items-center md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-bruinBlue focus:outline-none p-2">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-50 border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-bruinBlue hover:bg-gray-100">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-bruinBlue hover:bg-gray-100">About</a>
+                <a href="#people" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-bruinBlue hover:bg-gray-100">People</a>
+                <a href="#research" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-bruinBlue hover:bg-gray-100">Research</a>
+                <a href="#publications" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-bruinBlue hover:bg-gray-100">Publications</a>
+                <a href="#participate" class="block px-3 py-2 rounded-md text-base font-bold text-uclaDarkestBlue bg-bruinGold hover:bg-yellow-400 mt-4 text-center">Participate</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero-pattern text-white py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-bruinBlue opacity-90 mix-blend-multiply"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center text-center">
+            <span class="text-bruinGold font-bold tracking-wider uppercase mb-4 text-sm md:text-base border-b-2 border-bruinGold pb-1">UCLA Linguistics</span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight max-w-4xl">
+                Investigating the cognitive mechanisms of language.
+            </h1>
+            <p class="text-lg md:text-xl text-blue-100 max-w-2xl mb-10 font-light leading-relaxed">
+                We use behavioral and computational methods to understand how the human brain processes, comprehends, and produces language in real-time.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="#research" class="bg-white text-uclaDarkerBlue px-8 py-3 rounded font-semibold hover:bg-gray-100 transition-colors shadow-lg">
+                    Our Research
+                </a>
+                <a href="#participate" class="border-2 border-bruinGold text-bruinGold px-8 py-3 rounded font-semibold hover:bg-bruinGold hover:text-uclaDarkestBlue transition-colors shadow-lg">
+                    Join a Study
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About the Lab -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl font-bold text-uclaDarkestBlue mb-6 relative inline-block">
+                        About the Lab
+                        <span class="absolute bottom-0 left-0 w-1/2 h-1 bg-bruinGold mb-[-8px]"></span>
+                    </h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed text-lg">
+                        Located in the heart of the UCLA campus, the Language Processing Lab is a vibrant community of faculty, postdocs, graduate students, and undergraduates dedicated to the study of psycholinguistics.
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed text-lg">
+                        Our research investigates a wide range of topics, including syntactic parsing, lexical access, prosody, and bilingual language processing. We employ various methodologies, from traditional self-paced reading and eye-tracking to computational modeling, to uncover the architecture of the human language faculty.
+                    </p>
+                    <a href="#people" class="text-bruinBlue font-semibold hover:text-uclaDarkerBlue flex items-center gap-2 transition-colors">
+                        Meet our team <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="lg:w-1/2">
+                    <!-- Placeholder for Lab Photo -->
+                    <div class="rounded-xl overflow-hidden shadow-2xl relative">
+                        <img src="https://placehold.co/800x600/e2e8f0/475569?text=Lab+Group+Photo\n(Placeholder)" alt="Lab Members" class="w-full h-auto object-cover">
+                        <div class="absolute bottom-0 left-0 bg-uclaDarkerBlue text-white p-4 w-full opacity-90">
+                            <p class="text-sm font-medium"><i class="fas fa-map-marker-alt mr-2"></i> Campbell Hall, UCLA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Projects (Research) -->
+    <section id="research" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-uclaDarkestBlue mb-4">Current Projects</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Explore the ongoing investigations currently being conducted by our researchers and students.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border-t-4 border-bruinBlue">
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-blue-50 text-bruinBlue rounded-full flex items-center justify-center text-xl mb-4">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Real-time Sentence Processing</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-3">
+                            Investigating how comprehenders resolve syntactic ambiguities on the fly using eye-tracking while reading and auditory listening paradigms.
+                        </p>
+                        <a href="#" class="text-sm font-semibold text-bruinBlue hover:underline">Read more</a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border-t-4 border-bruinGold">
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-yellow-50 text-yellow-600 rounded-full flex items-center justify-center text-xl mb-4">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Bilingual Lexical Access</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-3">
+                            Examining cross-linguistic activation in early and late bilinguals to understand the organization of the bilingual mental lexicon.
+                        </p>
+                        <a href="#" class="text-sm font-semibold text-bruinBlue hover:underline">Read more</a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border-t-4 border-uclaDarkerBlue">
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-blue-50 text-uclaDarkerBlue rounded-full flex items-center justify-center text-xl mb-4">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Computational Psycholinguistics</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-3">
+                            Utilizing information-theoretic models (like Surprisal Theory) and Large Language Models to predict human reading times and behavioral responses.
+                        </p>
+                        <a href="#" class="text-sm font-semibold text-bruinBlue hover:underline">Read more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent News -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-uclaDarkestBlue mb-10 border-b pb-4">Recent News</h2>
+            <div class="space-y-6">
+                
+                <article class="flex flex-col md:flex-row gap-4 p-4 rounded-lg hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-100">
+                    <div class="md:w-32 flex-shrink-0 text-sm font-bold text-bruinBlue pt-1">
+                        Oct 15, 2026
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">New publication in Cognition</h3>
+                        <p class="text-gray-700">Lab members have published a new paper on predictive processing in naturalistic listening contexts. <a href="#" class="text-bruinBlue underline">Read the paper here</a>.</p>
+                    </div>
+                </article>
+
+                <article class="flex flex-col md:flex-row gap-4 p-4 rounded-lg hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-100">
+                    <div class="md:w-32 flex-shrink-0 text-sm font-bold text-bruinBlue pt-1">
+                        Sep 02, 2026
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Welcome to our new cohort!</h3>
+                        <p class="text-gray-700">We are thrilled to welcome two new PhD students and several undergraduate research assistants to the lab for the Fall quarter.</p>
+                    </div>
+                </article>
+
+                <article class="flex flex-col md:flex-row gap-4 p-4 rounded-lg hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-100">
+                    <div class="md:w-32 flex-shrink-0 text-sm font-bold text-bruinBlue pt-1">
+                        Jul 12, 2026
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">CUNY Conference Presentations</h3>
+                        <p class="text-gray-700">The lab will be presenting three posters and one talk at the upcoming CUNY Conference on Human Sentence Processing.</p>
+                    </div>
+                </article>
+
+            </div>
+            <div class="mt-8">
+                <a href="#" class="text-bruinBlue font-semibold hover:underline">View all news archive &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Participate / Call to Action -->
+    <section id="participate" class="py-20 bg-uclaDarkerBlue text-white relative">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-bruinBlue rounded-full filter blur-3xl opacity-50 -translate-y-1/2 translate-x-1/4"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Want to participate in our research?</h2>
+            <p class="text-blue-100 text-lg mb-10 leading-relaxed">
+                We are always looking for participants for our language experiments! Most studies involve reading sentences on a computer screen or listening to audio, and take about 30-60 minutes. Participants are compensated for their time (cash or course credit).
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#" class="bg-bruinGold text-uclaDarkestBlue px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-400 transition-colors shadow-lg flex items-center justify-center gap-2">
+                    <i class="fas fa-clipboard-list"></i> Sign up for a study
+                </a>
+                <a href="mailto:processing-lab@humnet.ucla.edu" class="border border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-uclaDarkerBlue transition-colors flex items-center justify-center gap-2">
+                    <i class="fas fa-envelope"></i> Email Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-uclaDarkestBlue text-gray-300 py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <!-- Branding -->
+            <div>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-8 h-8 bg-bruinGold rounded flex items-center justify-center text-uclaDarkestBlue font-bold text-sm">
+                        UCLA
+                    </div>
+                    <span class="font-bold text-white text-lg">Language Processing Lab</span>
+                </div>
+                <p class="text-sm text-gray-400 mb-4">
+                    Department of Linguistics<br>
+                    University of California, Los Angeles
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h4 class="text-white font-semibold mb-4 border-b border-gray-600 pb-2 inline-block">Quick Links</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="https://linguistics.ucla.edu" target="_blank" class="hover:text-bruinGold transition-colors">UCLA Department of Linguistics</a></li>
+                    <li><a href="#publications" class="hover:text-bruinGold transition-colors">Lab Publications</a></li>
+                    <li><a href="#people" class="hover:text-bruinGold transition-colors">Lab Members</a></li>
+                    <li><a href="#" class="hover:text-bruinGold transition-colors">Internal Wiki (Members Only)</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div>
+                <h4 class="text-white font-semibold mb-4 border-b border-gray-600 pb-2 inline-block">Contact & Location</h4>
+                <address class="not-italic text-sm space-y-3">
+                    <p class="flex items-start gap-2">
+                        <i class="fas fa-map-marker-alt mt-1 text-bruinGold"></i>
+                        <span>Campbell Hall, Room 3125<br>335 Portola Plaza<br>Los Angeles, CA 90095</span>
+                    </p>
+                    <p class="flex items-center gap-2">
+                        <i class="fas fa-envelope text-bruinGold"></i>
+                        <a href="mailto:processing-lab@humnet.ucla.edu" class="hover:text-white transition-colors">processing-lab@humnet.ucla.edu</a>
+                    </p>
+                </address>
+            </div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-gray-700 text-sm text-center text-gray-500">
+            &copy; 2026 UCLA Language Processing Lab. All rights reserved. <br>
+            <span class="text-xs mt-2 inline-block">Designed for processing.linguistics.ucla.edu</span>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close menu on link click
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
